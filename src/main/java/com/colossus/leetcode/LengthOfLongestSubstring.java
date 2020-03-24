@@ -23,8 +23,40 @@ public class LengthOfLongestSubstring {
         return ans;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("args = [" + lengthOfLongestSubstring("abcabcbb") + "]");
+      //  System.out.println("args = [" + lengthOfLongestSubstring("abcabcbb") + "]");
+
+        final int[] a = {1};
+        final int[] b = {2};
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+//                int temp = array[0];
+//                array[0] = array[1];
+//                array[1] = temp;
+                int temp = a[0];
+                a[0] = b[0];
+                b[0] =temp;
+            }
+        });
+//        Thread t2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    t1.join();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                System.out.println(a[0]);
+//                System.out.println(b[0]);
+//            }
+//        });
+
+        t1.start();
+       // t2.start();
+        System.out.println(a[0]);
+        System.out.println(b[0]);
+
     }
 }
