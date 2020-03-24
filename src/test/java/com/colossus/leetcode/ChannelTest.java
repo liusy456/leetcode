@@ -1,6 +1,5 @@
 package com.colossus.leetcode;
 
-import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -16,7 +15,6 @@ import java.nio.charset.CharsetDecoder;
  **/
 public class ChannelTest {
 
-    @Test
     public void channelTest() throws IOException {
         RandomAccessFile accessFile = new RandomAccessFile("C:\\Users\\Tlsy1\\Desktop\\ebay测试账号.txt", "rw");
         FileChannel fileChannel = accessFile.getChannel();
